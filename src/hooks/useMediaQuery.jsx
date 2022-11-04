@@ -7,10 +7,12 @@ const useMediaQuery = (query) => {
     const [matches, setMatches] = useState(false);
 
     useEffect(() => {
+        console.log("activated useEffect")
         const media = window.matchMedia(query);
         if (media.matches !== matches){
             setMatches(media.matches);
         }
+        console.log(media)
 
         const listener = () => setMatches(media.matches);
         window.addEventListener("resize", listener);

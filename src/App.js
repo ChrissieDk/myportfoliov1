@@ -2,18 +2,21 @@
 import Navbar from "./scenes/Navbar";
 import DotGroup from "./scenes/DotGroup";
 import { useEffect, useState } from "react";
-import useMediaQuery from "./hooks/useMediaQuery";
+// import useMediaQuery from "./hooks/useMediaQuery";
+import { useMediaQuery } from 'react-responsive';
 
 function App() {
   // set state of selectedpage default to home and check screensize
 
   const [selectedPage, setSelectedPage] = useState('home');
   const [isTopOfPage, setIsTopOfPage] = useState(true);
-  const isAboveMediumScreens = useMediaQuery("min-width: 1060px");
+  // const isAboveMediumScreens = useMediaQuery("min-width: 1060px");
+  const isAboveMediumScreens = useMediaQuery({ query: `(min-width: 760px)` });
 
   useEffect(() => {
 
     // checking window which gives position of y and what to di at values of 0 or not 0
+    
     const handleScroll = () => {
         if (window.scrollY === 0) setIsTopOfPage(true);
         if (window.scrollY !== 0) setIsTopOfPage(false);
