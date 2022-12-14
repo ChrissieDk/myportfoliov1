@@ -24,7 +24,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage}) => {
 
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
-  const navbarBackground = isTopOfPage ? "" : "bg-yellow";
+  const navbarBackground = isTopOfPage ? "" : "bg-white";
  
 
   return(
@@ -36,33 +36,33 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage}) => {
         {isAboveSmallScreens ? (
             <div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
                 <Link 
-                    page="Home"
+                    page=" Home"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                 />
                 <Link 
-                    page="Skills"
+                    page=" Skills"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                 />
                 <Link 
-                    page="Projects"
+                    page=" Projects"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                 />
                 <Link 
-                    page="Testimonials"
+                    page=" Testimonials"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                 />
                 <Link 
-                    page="Contact"
+                    page=" Contact"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                 />
             </div>
         ) : (<button
-                className="rounded-full bg-red p-2"
+                className="rounded-full bg-yellow p-2"
                 onClick={() => setIsMenuToggled(!isMenuToggled)}
                 >
             <img alt="menu-icon" src="../assets/menu-icon.svg" />
@@ -70,7 +70,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage}) => {
         )}
         {/* MOBILE MENU POPUP*/}
         {!isAboveSmallScreens && isMenuToggled && (
-            <div className="fixed right-0 bottom-0 h-full bg-blue w-[300px]">
+            <div className="fixed right-0 bottom-0 h-full bg-grey w-[300px]">
 
                 {/* CLOSE ICON */}
                 <div className="flex justify-end p-12">
@@ -88,22 +88,22 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage}) => {
                     setSelectedPage={setSelectedPage}
                 />
                 <Link 
-                    page="Skills"
+                    page=" Skills"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                 />
                 <Link 
-                    page="Projects"
+                    page=" Projects"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                 />
                 <Link 
-                    page="Testimonials"
+                    page=" Testimonials"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                 />
                 <Link 
-                    page="Contact"
+                    page=" Contact"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                 />

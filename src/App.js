@@ -1,8 +1,9 @@
-
+import Landing from "./scenes/Landing";
 import Navbar from "./scenes/Navbar";
 import DotGroup from "./scenes/DotGroup";
+import MySkills from "./scenes/MySkills";
 import { useEffect, useState } from "react";
-// import useMediaQuery from "./hooks/useMediaQuery";
+import LineGradient from "./components/LineGradient"
 import { useMediaQuery } from 'react-responsive';
 
 function App() {
@@ -39,6 +40,13 @@ function App() {
           setSelectedPage={setSelectedPage}
       />
       )}
+      <Landing 
+          setSelectedPage={setSelectedPage}
+      />
+      </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto md:h-full">
+        <MySkills />
       </div>
     </div>
   );
