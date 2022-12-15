@@ -2,7 +2,7 @@ import LineGradient from "../components/LineGradient";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import reactLogo from "../assets/logo192.png"
-// import tailwindLogo from "../assets/tailwindcss-icon"
+
 
 const MySkills = () => {
   const isAboveLarge = useMediaQuery("(min-width: 1060px)");

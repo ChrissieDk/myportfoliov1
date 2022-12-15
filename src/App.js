@@ -5,9 +5,11 @@ import MySkills from "./scenes/MySkills";
 import { useEffect, useState } from "react";
 import LineGradient from "./components/LineGradient"
 import { useMediaQuery } from 'react-responsive';
+import Projects from "./scenes/Projects";
+import { motion } from "framer-motion";
 
 function App() {
-  // set state of selectedpage default to home and check screensize
+  // set state of selected page default to home and check screensize
 
   const [selectedPage, setSelectedPage] = useState('home');
   const [isTopOfPage, setIsTopOfPage] = useState(true);
@@ -19,7 +21,11 @@ function App() {
     // checking window which gives position of y and what to di at values of 0 or not 0
     
     const handleScroll = () => {
-        if (window.scrollY === 0) setIsTopOfPage(true);
+      if (window.scrollY === 0) setIsTopOfPage(true);
+      if (window.scrollY === 0) {
+        setIsTopOfPage(true);
+        setSelectedPage("home");
+      }
         if (window.scrollY !== 0) setIsTopOfPage(false);
       }
       window.addEventListener("scroll", handleScroll);
@@ -42,11 +48,28 @@ function App() {
       )}
       <Landing 
           setSelectedPage={setSelectedPage}
+          
       />
       </div>
       <LineGradient />
-      <div className="w-5/6 mx-auto md:h-full">
-        <MySkills />
+      <div className="w-5/6 mx-auto md:h-full ">
+        <motion.div
+          margin="0 0 -200px 0"
+          amount="all"
+          onViewportEnter={() => setSelectedPage("skills")}
+        >
+          <MySkills />
+        </motion.div>
+        </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto h-full">
+      <Projects />
+        <motion.div
+          margin="0 0 -200px 0"
+          amount="all"
+          onViewportEnter={() => setSelectedPage("projects")}
+        >
+        </motion.div>
       </div>
     </div>
   );
